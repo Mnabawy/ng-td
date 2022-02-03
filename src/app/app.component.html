@@ -6,6 +6,20 @@
   <input #newItem placeholder="add an item" (keyup.enter)="addItem(newItem.value); newItem.value = ''"
     class="lg-text-input" name="" id="addItemInput">
 
+  <div class="btn-wrapper">
+    <button class="btn btn-menu" [class.active]="filter == 'all'" (click)="filter = 'all'">
+      All
+    </button>
+
+    <button class="btn btn-menu" [class.active]="filter == 'active'" (click)="filter = 'active'">
+      To Do
+    </button>
+
+    <button class="btn btn-menu" [class.active]="filter == 'done'" (click)="filter = 'done'">
+      Done
+    </button>
+  </div>
+
   <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
 
   <ul>

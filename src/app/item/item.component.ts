@@ -10,9 +10,9 @@ import { Item } from '../item';
 export class ItemComponent {
   editable = false;
 
-  @Input item: Item;
-  @Input newItem: Item;
-  @Output remove = new EventEmitter<Item>();
+  @Input() item: Item;
+  @Input() newItem: Item;
+  @Output() remove = new EventEmitter<Item>();
 
   saveItem(desc) {
     if (!desc) return;
